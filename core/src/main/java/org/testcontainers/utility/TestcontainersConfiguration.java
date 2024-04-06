@@ -141,6 +141,10 @@ public class TestcontainersConfiguration {
         return Boolean.parseBoolean(getEnvVarOrProperty("ryuk.container.privileged", "true"));
     }
 
+    public boolean isRyukShutdownHookEnabled() {
+        return Boolean.parseBoolean(getEnvVarOrProperty("ryuk.container.shutdownhook", "false"));
+    }
+
     @Deprecated
     public String getRyukImage() {
         return getImage(RYUK_IMAGE).asCanonicalNameString();
